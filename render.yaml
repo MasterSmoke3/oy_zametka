@@ -2,10 +2,7 @@ services:
   - type: web
     name: oy-zametka
     runtime: dotnet
+    branch: main
     buildCommand: "dotnet publish -c Release -o out"
-    startCommand: "dotnet ZametkiApp.dll"
-    buildFilter: []
-    env: 
-      - key: ASPNETCORE_ENVIRONMENT
-        value: Production
+    startCommand: "dotnet out/ZametkiApp.dll"
     publishPath: out
