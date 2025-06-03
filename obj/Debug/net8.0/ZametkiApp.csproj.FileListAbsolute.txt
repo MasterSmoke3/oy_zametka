@@ -512,3 +512,9 @@ C:\Projects\ZametkiApp\bin\Debug\net8.0\out\appsettings.json
 C:\Projects\ZametkiApp\bin\Debug\net8.0\out\ZametkiApp.deps.json
 C:\Projects\ZametkiApp\bin\Debug\net8.0\out\ZametkiApp.runtimeconfig.json
 C:\Projects\ZametkiApp\obj\Debug\net8.0\ZametkiApp.sourcelink.json
+C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll

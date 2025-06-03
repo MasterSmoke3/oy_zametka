@@ -1,10 +1,12 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using ZametkiApp.Data;
+using ZametkiApp.Hubs;
 
 namespace ZametkiApp.Services
 {
@@ -23,6 +25,7 @@ namespace ZametkiApp.Services
             {
                 using var scope = _serviceProvider.CreateScope();
                 var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                var hub = scope.ServiceProvider.GetRequiredService<IHubContext<NotificationHub>>();
 
                 var now = DateTime.UtcNow;
                 var notes = db.Notes
@@ -31,12 +34,12 @@ namespace ZametkiApp.Services
 
                 foreach (var note in notes)
                 {
-                    Console.WriteLine($"🔔 Напоминание о заметке: {note.Title}");
+                    await hub.Clients.All.SendAsync("ReceiveReminder", $"🔔 Напоминание: {note.Title}", stoppingToken);
                     note.IsNotified = true;
                 }
 
                 await db.SaveChangesAsync();
-                await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+                await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
             }
         }
     }

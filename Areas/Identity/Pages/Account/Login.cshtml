@@ -4,7 +4,6 @@
     Layout = null;
     ViewData["Title"] = "Вход";
 }
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -12,7 +11,7 @@
     <title>@ViewData["Title"]</title>
     <style>
         body {
-            background-color: #2c2c2c; /* темно-серый фон */
+            background-color: #2c2c2c;
             font-family: 'Segoe UI', sans-serif;
             display: flex;
             justify-content: center;
@@ -24,7 +23,7 @@
         .form-container {
             width: 100%;
             max-width: 400px;
-            background-color: #464445; /* светло-серый блок */
+            background-color: #464445;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -34,14 +33,14 @@
             text-align: center;
             margin-bottom: 24px;
             font-size: 1.5rem;
-            color: #ffffff; /* белый текст */
+            color: #ffffff;
         }
 
         label {
             display: block;
             margin-bottom: 6px;
             font-weight: 600;
-            color: #ffffff; /* белый текст */
+            color: #ffffff;
         }
 
         input[type="email"],
@@ -62,20 +61,20 @@
 
         .form-check input {
             margin-right: 6px;
-            accent-color: #7b2cbf; /* фиолетовый чекбокс */
+            accent-color: #7b2cbf;
         }
 
         .form-check label {
             margin: 0;
             font-weight: normal;
             font-size: 0.95rem;
-            color: #ffffff; /* белый текст */
+            color: #ffffff;
         }
 
         .btn {
             width: 100%;
             padding: 12px;
-            background-color: #7b2cbf; /* фиолетовая кнопка */
+            background-color: #7b2cbf;
             border: none;
             color: white;
             font-size: 1rem;
@@ -95,7 +94,7 @@
         }
 
         .links a {
-            color: #b085f5; /* светло-фиолетовый */
+            color: #b085f5;
             text-decoration: none;
         }
 
@@ -123,15 +122,15 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <label asp-for="Input.Email"></label>
-            <input asp-for="Input.Email" type="email" />
+            <input asp-for="Input.Email" type="email" name="Input.Email" />
             <span asp-validation-for="Input.Email" class="text-danger"></span>
 
             <label asp-for="Input.Password"></label>
-            <input asp-for="Input.Password" type="password" />
+            <input asp-for="Input.Password" type="password" name="Input.Password" />
             <span asp-validation-for="Input.Password" class="text-danger"></span>
 
             <div class="form-check">
-                <input asp-for="Input.RememberMe" />
+                <input asp-for="Input.RememberMe" name="Input.RememberMe" />
                 <label asp-for="Input.RememberMe"></label>
             </div>
 

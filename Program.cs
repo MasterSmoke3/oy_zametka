@@ -7,8 +7,11 @@ using Microsoft.Extensions.Hosting;
 using ZametkiApp.Data;
 using Microsoft.Extensions.Configuration;
 using ZametkiApp.Services;
+using ZametkiApp.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHostedService<DeadlineNotifierService>();
 
 // Подключение конфигурации строки подключения
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") 
@@ -17,6 +20,8 @@ var connectionString = builder.Configuration.GetConnectionString("ApplicationDbC
 // Подключение EF Core + SQLite
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite("Data Source=notes.db"));
+
+builder.Services.AddSignalR();
 
 // Identity с отключённым подтверждением почты
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>
@@ -72,6 +77,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 // Маршруты
+app.MapHub<NotificationHub>("/notificationHub");
 app.MapRazorPages();
 app.MapControllers();
 
