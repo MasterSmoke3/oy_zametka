@@ -1,18 +1,20 @@
-# Используем официальный .NET SDK для сборки
+# Устанавливаем SDK для сборки
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Копируем всё и публикуем проект
-COPY . .
+# Копируем csproj и восстанавливаем зависимости
+COPY *.csproj ./
+RUN dotnet restore
+
+# Копируем весь проект и собираем
+COPY . ./
 RUN dotnet publish -c Release -o out
 
-# Используем рантайм образ
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+# Финальный runtime образ
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
-COPY --from=build /app/out ./
+COPY --from=build /app/out .
 
-# Порт, который Render пробрасывает по умолчанию — 10000
-ENV ASPNETCORE_URLS=http://0.0.0.0:10000
-EXPOSE 10000
-
+# Указываем порт и стартовую команду
+EXPOSE 80
 ENTRYPOINT ["dotnet", "ZametkiApp.dll"]

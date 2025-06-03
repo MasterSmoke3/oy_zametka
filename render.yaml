@@ -3,4 +3,7 @@ services:
     name: oy-zametka
     env: docker
     plan: free
-    dockerfilePath: Dockerfile
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    buildCommand: ""
+    startCommand: ""
