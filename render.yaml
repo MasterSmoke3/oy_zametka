@@ -4,5 +4,5 @@ services:
     runtime: dotnet
     branch: main
     buildCommand: "dotnet publish -c Release -o out"
-    startCommand: "dotnet out/ZametkiApp.dll"
+    startCommand: "dotnet out/ZametkiApp.csproj"
     publishPath: out
