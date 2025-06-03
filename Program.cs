@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ZametkiApp.Data;
 using Microsoft.Extensions.Configuration;
+using ZametkiApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,6 +42,8 @@ builder.Services.AddRazorPages(options =>
 
 // Добавляем контроллеры (если будут API)
 builder.Services.AddControllers();
+
+builder.Services.AddHostedService<DeadlineNotifierService>();
 
 // Запускаем приложение
 var app = builder.Build();

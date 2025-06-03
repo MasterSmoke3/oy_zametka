@@ -1,7 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ZametkiApp.Models
 {
@@ -25,10 +24,12 @@ namespace ZametkiApp.Models
 
         public RepeatType Repeat { get; set; } = RepeatType.None;
 
-        // 👇 Добавлено это поле для связи с пользователем
         public string UserId { get; set; }
 
         public IdentityUser User { get; set; }
+
+        // 🔔 Поле, которое показывает — отправлено ли уведомление
+        public bool IsNotified { get; set; } = false;
     }
 
     public enum RepeatType

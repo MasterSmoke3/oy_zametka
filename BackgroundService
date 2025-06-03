@@ -1,0 +1,34 @@
+public class DeadlineNotifierService : BackgroundService
+{
+    private readonly IServiceProvider _serviceProvider;
+
+    public DeadlineNotifierService(IServiceProvider serviceProvider)
+    {
+        _serviceProvider = serviceProvider;
+    }
+
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        while (!stoppingToken.IsCancellationRequested)
+        {
+            using var scope = _serviceProvider.CreateScope();
+            var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+            var now = DateTime.UtcNow;
+            var upcomingNotes = db.Notes
+                .Where(n => !n.IsNotified && n.Deadline <= now)
+                .ToList();
+
+            foreach (var note in upcomingNotes)
+            {
+                // Здесь можно отправить уведомление (email, SignalR, и т.д.)
+                Console.WriteLine($"[NOTIFY] Напоминание: {note.Title}");
+
+                note.IsNotified = true; // Чтобы не уведомлять повторно
+            }
+
+            await db.SaveChangesAsync();
+            await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+        }
+    }
+}
