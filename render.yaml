@@ -1,10 +1,6 @@
 services:
   - type: web
     name: oy-zametka
-    runtime: dotnet
-    buildCommand: dotnet publish -c Release -o out
-    startCommand: dotnet out/ZametkiApp.csproj
-    publishPath: out
-    envVars:
-      - key: ASPNETCORE_URLS
-        value: http://0.0.0.0:10000
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
