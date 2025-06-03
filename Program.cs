@@ -72,4 +72,11 @@ app.UseAuthorization();
 app.MapRazorPages();
 app.MapControllers();
 
+// Автоматическое применение миграций при запуске
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    db.Database.Migrate();
+}
+
 app.Run();
