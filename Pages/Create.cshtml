@@ -1,0 +1,85 @@
+@page
+@model ZametkiApp.Pages.CreateModel
+@{
+    ViewData["Title"] = "Создать заметку";
+}
+
+<h1>Создать заметку</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Note.Title">Заголовок</label>
+        <input asp-for="Note.Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Note.Description">Описание</label>
+        <textarea asp-for="Note.Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Note.ReminderText">Текст напоминания</label>
+        <input asp-for="Note.ReminderText" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Note.Deadline">Дедлайн</label>
+        <input asp-for="Note.Deadline" type="datetime-local" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Note.Repeat">Повторение</label>
+        <select asp-for="Note.Repeat" class="form-control" asp-items="Html.GetEnumSelectList<ZametkiApp.Models.RepeatType>()"></select>
+    </div>
+
+    <div class="form-group mt-3">
+        <label>Вложения (до 5 файлов)</label>
+        <div id="fileDrop" class="border p-3 rounded text-center bg-light" style="cursor: pointer;">
+            Перетащите файлы сюда или кликните для выбора
+        </div>
+        <input type="file" id="fileInput" name="UploadedFiles" multiple hidden />
+        <div id="fileList" class="mt-2 small text-muted"></div>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Сохранить</button>
+    <a asp-page="/Index" class="btn btn-secondary mt-3">Отмена</a>
+</form>
+
+@section Scripts {
+<script>
+    const dropZone = document.getElementById('fileDrop');
+    const fileInput = document.getElementById('fileInput');
+    const fileList = document.getElementById('fileList');
+
+    dropZone.addEventListener('click', () => fileInput.click());
+
+    dropZone.addEventListener('dragover', e => {
+        e.preventDefault();
+        dropZone.classList.add('bg-warning');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('bg-warning');
+    });
+
+    dropZone.addEventListener('drop', e => {
+        e.preventDefault();
+        dropZone.classList.remove('bg-warning');
+        fileInput.files = e.dataTransfer.files;
+        updateFileList();
+    });
+
+    fileInput.addEventListener('change', updateFileList);
+
+    function updateFileList() {
+        fileList.innerHTML = '';
+        const files = fileInput.files;
+        if (files.length > 5) {
+            alert("Можно загрузить максимум 5 файлов");
+            fileInput.value = '';
+            return;
+        }
+        Array.from(files).forEach(file => {
+            const div = document.createElement('div');
+            div.textContent = file.name;
+            fileList.appendChild(div);
+        });
+    }
+</script>
+}

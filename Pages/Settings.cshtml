@@ -1,0 +1,49 @@
+@page
+@model ZametkiApp.Pages.SettingsModel
+@{
+    ViewData["Title"] = "Настройки";
+}
+
+<h1>Настройки</h1>
+
+<form method="post">
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" asp-for="Settings.EnableNotifications" />
+        <label class="form-check-label" asp-for="Settings.EnableNotifications">Включить уведомления</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" asp-for="Settings.EnableSound" />
+        <label class="form-check-label" asp-for="Settings.EnableSound">Включить звук</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" asp-for="Settings.EnableSnooze" />
+        <label class="form-check-label" asp-for="Settings.EnableSnooze">Разрешить отложить напоминание</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
+</form>
+
+@section Scripts {
+    <script>
+        // При загрузке страницы — установить значения в localStorage
+        window.addEventListener("load", function () {
+            const notif = document.getElementById("Settings_EnableNotifications");
+            const sound = document.getElementById("Settings_EnableSound");
+            const snooze = document.getElementById("Settings_EnableSnooze");
+
+            // Инициализировать localStorage
+            localStorage.setItem("notificationsEnabled", notif.checked);
+            localStorage.setItem("soundEnabled", sound.checked);
+            localStorage.setItem("snoozeEnabled", snooze.checked);
+
+            // Следить за изменениями
+            [notif, sound, snooze].forEach(input => {
+                input.addEventListener("change", () => {
+                    localStorage.setItem("notificationsEnabled", notif.checked);
+                    localStorage.setItem("soundEnabled", sound.checked);
+                    localStorage.setItem("snoozeEnabled", snooze.checked);
+                });
+            });
+        });
+    </script>
+}

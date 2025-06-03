@@ -1,0 +1,149 @@
+﻿@page
+@model LoginModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Вход";
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            background-color: #2c2c2c; /* темно-серый фон */
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #464445; /* светло-серый блок */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+            color: #ffffff; /* белый текст */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #ffffff; /* белый текст */
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid rgb(73, 70, 73);
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .form-check input {
+            margin-right: 6px;
+            accent-color: #7b2cbf; /* фиолетовый чекбокс */
+        }
+
+        .form-check label {
+            margin: 0;
+            font-weight: normal;
+            font-size: 0.95rem;
+            color: #ffffff; /* белый текст */
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #7b2cbf; /* фиолетовая кнопка */
+            border: none;
+            color: white;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #6921a8;
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 16px;
+            font-size: 0.95rem;
+        }
+
+        .links a {
+            color: #b085f5; /* светло-фиолетовый */
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .text-danger {
+            color: #dc3545;
+            font-size: 0.85rem;
+        }
+
+        @@media (max-width: 480px) {
+            .form-container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Вход</h2>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <label asp-for="Input.Email"></label>
+            <input asp-for="Input.Email" type="email" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+
+            <label asp-for="Input.Password"></label>
+            <input asp-for="Input.Password" type="password" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+            <div class="form-check">
+                <input asp-for="Input.RememberMe" />
+                <label asp-for="Input.RememberMe"></label>
+            </div>
+
+            <button type="submit" class="btn">Войти</button>
+
+            <div class="links">
+                <a asp-page="./Register">Регистрация</a>
+                <a asp-page="./ForgotPassword">Забыли пароль?</a>
+            </div>
+        </form>
+    </div>
+
+    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>

@@ -1,0 +1,17 @@
+@using Microsoft.AspNetCore.Identity
+@using ZametkiApp.Data
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form method="post" asp-area="Identity" asp-page="/Account/Logout" class="form-inline">
+        <span class="text-white me-2">@UserManager.GetUserName(User)!</span>
+        <button type="submit" class="btn btn-outline-warning btn-sm">Выйти</button>
+    </form>
+}
+else
+{
+    <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-light btn-sm">Вход</a>
+    <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-outline-success btn-sm ms-2">Регистрация</a>
+}
