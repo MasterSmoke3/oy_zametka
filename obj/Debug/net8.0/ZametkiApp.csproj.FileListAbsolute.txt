@@ -507,3 +507,8 @@ C:\Projects\ZametkiApp\obj\Debug\net8.0\refint\ZametkiApp.dll
 C:\Projects\ZametkiApp\obj\Debug\net8.0\ZametkiApp.pdb
 C:\Projects\ZametkiApp\obj\Debug\net8.0\ZametkiApp.genruntimeconfig.cache
 C:\Projects\ZametkiApp\obj\Debug\net8.0\ref\ZametkiApp.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\out\web.config
+C:\Projects\ZametkiApp\bin\Debug\net8.0\out\appsettings.json
+C:\Projects\ZametkiApp\bin\Debug\net8.0\out\ZametkiApp.deps.json
+C:\Projects\ZametkiApp\bin\Debug\net8.0\out\ZametkiApp.runtimeconfig.json
+C:\Projects\ZametkiApp\obj\Debug\net8.0\ZametkiApp.sourcelink.json
