@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: oy-zametka
+    runtime: dotnet
+    buildCommand: "dotnet publish -c Release -o out"
+    startCommand: "dotnet ZametkiApp.dll"
+    buildFilter: []
+    env: 
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+    publishPath: out
