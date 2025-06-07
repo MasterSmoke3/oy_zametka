@@ -8,3 +8,15 @@ services:
     repo: https://github.com/MasterSmoke3/oy_zametka
     dockerfilePath: ./Dockerfile
     autoDeploy: true
+    envVars:
+      - key: ConnectionStrings__ApplicationDbContextConnection
+        fromDatabase:
+          name: zametki-db
+          property: connectionString
+
+  - type: postgres
+    name: zametki-db
+    plan: free
+    region: frankfurt
+    databaseName: zametki
+    user: postgres

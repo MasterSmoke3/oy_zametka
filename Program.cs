@@ -13,13 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHostedService<DeadlineNotifierService>();
 
-// Подключение конфигурации строки подключения
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") 
-    ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
+    ?? throw new InvalidOperationException("Connection string not found.");
 
-// Подключение EF Core + SQLite
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite("Data Source=notes.db"));
+    options.UseNpgsql(connectionString));
 
 builder.Services.AddSignalR();
 

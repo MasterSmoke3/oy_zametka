@@ -518,3 +518,11 @@ C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstraction
 C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
 C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Projects\ZametkiApp\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\Npgsql.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Projects\ZametkiApp\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
