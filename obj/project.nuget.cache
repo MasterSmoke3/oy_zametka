@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9eXdxcXcons=",
+  "dgSpecHash": "mk52/v4RGEI=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\ZametkiApp\\ZametkiApp.csproj",
+  "projectFilePath": "C:\\Project\\ZametkiApp\\ZametkiApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pc\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

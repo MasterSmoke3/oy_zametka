@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\ZametkiApp\\ZametkiApp.csproj": {}
+    "C:\\Project\\ZametkiApp\\ZametkiApp.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\ZametkiApp\\ZametkiApp.csproj": {
+    "C:\\Project\\ZametkiApp\\ZametkiApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\ZametkiApp\\ZametkiApp.csproj",
+        "projectUniqueName": "C:\\Project\\ZametkiApp\\ZametkiApp.csproj",
         "projectName": "ZametkiApp",
-        "projectPath": "C:\\Projects\\ZametkiApp\\ZametkiApp.csproj",
+        "projectPath": "C:\\Project\\ZametkiApp\\ZametkiApp.csproj",
         "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\ZametkiApp\\obj\\",
+        "outputPath": "C:\\Project\\ZametkiApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pc\\AppData\\Roaming\\NuGet\\NuGet.Config"

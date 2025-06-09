@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KhuFbJUSAlXfBtDernoRsYVIDb/LuwGWkHl+FA6CB4o=",
+  "Hash": "bVtEa5+m9s4qn+eqyhck0euqVHG+nusV5ptOEFvLsF4=",
   "Source": "ZametkiApp",
   "BasePath": "_content/ZametkiApp",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ZametkiApp\\wwwroot",
       "Source": "ZametkiApp",
-      "ContentRoot": "C:\\Projects\\ZametkiApp\\wwwroot\\",
+      "ContentRoot": "C:\\Project\\ZametkiApp\\wwwroot\\",
       "BasePath": "_content/ZametkiApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Projects\\ZametkiApp\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Project\\ZametkiApp\\wwwroot\\css\\site.css",
       "SourceId": "ZametkiApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\ZametkiApp\\wwwroot\\",
+      "ContentRoot": "C:\\Project\\ZametkiApp\\wwwroot\\",
       "BasePath": "_content/ZametkiApp",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Projects\\ZametkiApp\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Project\\ZametkiApp\\wwwroot\\js\\site.js",
       "SourceId": "ZametkiApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\ZametkiApp\\wwwroot\\",
+      "ContentRoot": "C:\\Project\\ZametkiApp\\wwwroot\\",
       "BasePath": "_content/ZametkiApp",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Projects\\ZametkiApp\\wwwroot\\service-worker.js",
+      "Identity": "C:\\Project\\ZametkiApp\\wwwroot\\service-worker.js",
       "SourceId": "ZametkiApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\ZametkiApp\\wwwroot\\",
+      "ContentRoot": "C:\\Project\\ZametkiApp\\wwwroot\\",
       "BasePath": "_content/ZametkiApp",
       "RelativePath": "service-worker.js",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\service-worker.js"
     },
     {
-      "Identity": "C:\\Projects\\ZametkiApp\\wwwroot\\sound\\reminder.mp3",
+      "Identity": "C:\\Project\\ZametkiApp\\wwwroot\\sound\\reminder.mp3",
       "SourceId": "ZametkiApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\ZametkiApp\\wwwroot\\",
+      "ContentRoot": "C:\\Project\\ZametkiApp\\wwwroot\\",
       "BasePath": "_content/ZametkiApp",
       "RelativePath": "sound/reminder.mp3",
       "AssetKind": "All",

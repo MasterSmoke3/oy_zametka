@@ -1,19 +1,19 @@
 {
   "Files": [
     {
-      "Id": "C:\\Projects\\ZametkiApp\\wwwroot\\css\\site.css",
+      "Id": "C:\\Project\\ZametkiApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Projects\\ZametkiApp\\wwwroot\\js\\site.js",
+      "Id": "C:\\Project\\ZametkiApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Projects\\ZametkiApp\\wwwroot\\service-worker.js",
+      "Id": "C:\\Project\\ZametkiApp\\wwwroot\\service-worker.js",
       "PackagePath": "staticwebassets\\service-worker.js"
     },
     {
-      "Id": "C:\\Projects\\ZametkiApp\\wwwroot\\sound\\reminder.mp3",
+      "Id": "C:\\Project\\ZametkiApp\\wwwroot\\sound\\reminder.mp3",
       "PackagePath": "staticwebassets\\sound\\reminder.mp3"
     },
     {
